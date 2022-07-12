@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="426a0790-551c-49f5-b320-d61455d3a7f7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/ICellContent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StylePointsDebug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/ISnakeHazard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleRank.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleLevel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/IExternalRankMultiplier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AB7DE693-7A44-48B0-A6CC-D59E9820599A/32/c810c37f/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/SnakeStepTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StylePointsCounter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/StylePointsUI/StylePointsView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/IDestructible.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SnakeStepTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/Teleport.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SnakeStepTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleLevel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StylePointsDebug.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StylePointsCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/SnakeStepTimer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/IDestructible.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/ISnakeHazard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleRank.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/StylePointsUI/StylePointsView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/ScorePill.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="29LDU4O8SXO2kdPUFeRN2MRyfl7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2212">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="2212" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="426a0790-551c-49f5-b320-d61455d3a7f7" name="Default Changelist" comment="" />
+      <created>1652883484665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652883484665</updated>
+      <workItem from="1652883485895" duration="5919000" />
+      <workItem from="1652890032829" duration="1504000" />
+      <workItem from="1653141234348" duration="19611000" />
+      <workItem from="1653412614911" duration="598000" />
+      <workItem from="1654444699340" duration="10265000" />
+      <workItem from="1656172574610" duration="2061000" />
+      <workItem from="1656350738833" duration="6192000" />
+      <workItem from="1656613896714" duration="4188000" />
+      <workItem from="1656696916522" duration="2253000" />
+      <workItem from="1656749513785" duration="17623000" />
+      <workItem from="1656833688170" duration="13878000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state width="2517" height="265" key="GridCell.Tab.0.bottom" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.0.center" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.0.left" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.0.right" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.1.bottom" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.1.center" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.1.left" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.1.right" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.2.bottom" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.2.center" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.2.left" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.2.right" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.3.bottom" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.3.center" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.3.left" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state width="2517" height="265" key="GridCell.Tab.3.right" timestamp="1656885291763">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="265" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1656885291763" />
+    <state x="1085" y="375" key="RiderGenerateDialog" timestamp="1656787631121">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="375" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1656787631121" />
+    <state x="937" y="331" key="run.anything.popup" timestamp="1653247155460">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="937" y="331" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1653247155460" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1656614143618">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1656614143618" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="snakeHead.Field.AllCells" language="C#" custom="RiderImportsList:" />
+        <watch expression="fieldCells" language="C#" custom="RiderImportsList:" />
+        <watch expression="cellNeighbors" language="C#" custom="RiderImportsList:" />
+        <watch expression="cellsToCheck" language="C#" custom="RiderImportsList:" />
+        <watch expression="checkedCells" language="C#" custom="RiderImportsList:" />
+        <watch expression="fieldCells.Contains(cellsToCheck[0])" language="C#" custom="RiderImportsList:" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
