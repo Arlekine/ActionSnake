@@ -9,50 +9,33 @@ public class Mover : MonoBehaviour
 
     private Coroutine _currentMoveRoutine;
 
-    private Vector3 _startPoint;
-    private Vector3 _endPoint;
-    private float _currentTime;
-    private float _targetTime;
-    private bool _isHalfWayTriggered;
-
-    private void Awake()
-    {
-        enabled = false;
-    }
-
     public void Move(Vector3 startPoint, Vector3 endPoint, float time)
     {
-        _isHalfWayTriggered = false;
-
-        _currentTime = 0f;
-        _startPoint = startPoint;
-        _endPoint = endPoint;
-        _targetTime = time;
-
-        enabled = true;
+        if (_currentMoveRoutine != null)
+            StopCoroutine(_currentMoveRoutine);
+        
+        _currentMoveRoutine = StartCoroutine(MovingRoutine(startPoint, endPoint, time));
     }
 
-    private void Update()
+    private IEnumerator MovingRoutine(Vector3 startPoint, Vector3 endPoint, float time)
     {
-        MoveStep(_startPoint, _endPoint, _targetTime);
-    }
+        var currentTime = 0f;
+        var isHalfWayTriggered = false;
 
-    private void MoveStep(Vector3 startPoint, Vector3 endPoint, float time)
-    {
-        transform.position = Vector3.Lerp(startPoint, endPoint, _currentTime / time);
-
-        _currentTime += Time.deltaTime;
-
-        if (_isHalfWayTriggered == false && _currentTime >= time * 0.5f)
+        while (currentTime <= time)
         {
-            _isHalfWayTriggered = true;
-            OnHalfWay?.Invoke();
-        }
+            transform.position = Vector3.Lerp(startPoint, endPoint, currentTime / time);
 
-        if (_currentTime > time)
-        {
-            enabled = false;
-            OnMoveComplete?.Invoke();
+            yield return null;
+            currentTime += Time.deltaTime;
+
+            if (isHalfWayTriggered == false && currentTime >= time * 0.5f)
+            {
+                isHalfWayTriggered = true;
+                OnHalfWay?.Invoke();
+            }
         }
+        
+        OnMoveComplete?.Invoke();
     }
 }

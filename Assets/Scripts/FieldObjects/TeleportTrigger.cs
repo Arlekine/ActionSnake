@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportTrigger : MonoBehaviour
+public class TeleportTrigger : FieldObject
 {
     private CellCoordinates _teleportationCell;
 
@@ -12,14 +12,9 @@ public class TeleportTrigger : MonoBehaviour
         _teleportationCell = cell;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void InteractWithSnake(SnakeHead snake)
     {
-        var mover = other.GetComponent<SnakeHead>();
-
-        if (mover != null)
-        {
-            TeleportToPoint(mover);
-        }
+        TeleportToPoint(snake);
     }
 
     private void TeleportToPoint(SnakeHead mover)

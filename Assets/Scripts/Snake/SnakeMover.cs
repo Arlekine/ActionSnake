@@ -20,7 +20,6 @@ public class SnakeMover : MonoBehaviour, ICellContent
 
             _timeForStep = value;
         }
-
     }
 
     protected Field _field;

@@ -12,8 +12,8 @@ public class LevelCreater : MonoBehaviour
     [SerializeField] private Transform _fieldStartPosition;
     [SerializeField] private SnakeHead _snake;
     [SerializeField] private TeleportTrigger _teleportTriggerPrefab;
-    [SerializeField] private FreeCellsTester _freeCellsTester;
     [SerializeField] private Camera _camera;
+    [SerializeField] private List<FieldSpawnerBase> _fieldSpawners = new List<FieldSpawnerBase>();
 
     private Field _field;
     private List<List<GameObject>> _cellPoints = new List<List<GameObject>>();
@@ -34,27 +34,17 @@ public class LevelCreater : MonoBehaviour
 
                 _cellPoints[x].Add(point);
 
-                _field.OnCellOccupied += (coordinates, content) =>
-                {
-                    //_cellPoints[coordinates.X][coordinates.Y].GetComponent<Renderer>().material.color = Color.red;
-                };
-                
-                _field.OnCellFree += (coordinates) =>
-                {
-                    //_cellPoints[coordinates.X][coordinates.Y].GetComponent<Renderer>().material.color = Color.white;
-                };
-
                 if (x == 0 && y != 0)
-                    CreateTeleportTrigger(_field[x,y], new CellCoordinates(_field.Width - 2, y));
+                    CreateTeleportTrigger(new CellCoordinates(x, y), new CellCoordinates(_field.Width - 2, y));
                 
                 if (x == _field.Width - 1 && y != _field.Height - 1)
-                    CreateTeleportTrigger(_field[x, y], new CellCoordinates(1,y));
+                    CreateTeleportTrigger(new CellCoordinates(x, y), new CellCoordinates(1,y));
                 
                 if (y == 0 && x != 0)
-                    CreateTeleportTrigger(_field[x, y], new CellCoordinates(x, _field.Height - 2));
+                    CreateTeleportTrigger(new CellCoordinates(x, y), new CellCoordinates(x, _field.Height - 2));
                 
                 if (y == _field.Height - 1  && x != _field.Width - 1)
-                    CreateTeleportTrigger(_field[x, y], new CellCoordinates(x,1));
+                    CreateTeleportTrigger(new CellCoordinates(x, y), new CellCoordinates(x,1));
             }
         }
         
@@ -63,14 +53,18 @@ public class LevelCreater : MonoBehaviour
         var cameraPositioner = new FieldCameraPositioner(_camera, _cameraUIOffset);
         cameraPositioner.PositionCamera(_field);
         var snakeTime = new SnakeStepTime(_snake);
-        
-        _freeCellsTester.SetCellsList(_field, _cellPoints);
+
+        foreach (var fieldSpawner in _fieldSpawners)
+        {
+            fieldSpawner.Init(_field);
+        }
     }
 
 
-    private void CreateTeleportTrigger(Vector3 spawnPosition, CellCoordinates teleportationCell)
+    private void CreateTeleportTrigger(CellCoordinates spawnPosition, CellCoordinates teleportationCell)
     {
-        var teleport = Instantiate(_teleportTriggerPrefab, spawnPosition, Quaternion.identity);
+        var teleport = Instantiate(_teleportTriggerPrefab, _field[spawnPosition], Quaternion.identity);
         teleport.SetTeleportationCell(teleportationCell);
+        _field.OccupyCell(spawnPosition, teleport);
     }
 }

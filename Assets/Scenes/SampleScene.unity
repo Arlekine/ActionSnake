@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 1560976246}
   - component: {fileID: 1560976247}
   - component: {fileID: 1560976248}
+  - component: {fileID: 1560976249}
   m_Layer: 0
   m_Name: Field
   m_TagString: Untagged
@@ -1219,8 +1220,10 @@ MonoBehaviour:
   _fieldStartPosition: {fileID: 393208204}
   _snake: {fileID: 1180199310}
   _teleportTriggerPrefab: {fileID: 5254847615004439196, guid: c558c3f029f964548a502f289574777b, type: 3}
-  _freeCellsTester: {fileID: 1560976248}
   _camera: {fileID: 963194227}
+  _fieldSpawners:
+  - {fileID: 1560976248}
+  - {fileID: 1560976249}
 --- !u!114 &1560976247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,9 +1253,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1560976244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 979371825165cf442b9d9cdda1b81e73, type: 3}
+  m_Script: {fileID: 11500000, guid: fa76249a18d94baeabd0dc2d6155f89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 5903782019633076450, guid: fa2598ba59ce83a4cad19d76c60a7f26, type: 3}
+  _minSpawnTime: 10
+  _maxSpawnTime: 20
+  _maxSpawnedObject: 5
+  _freeAreaSize: 1
+  _stylePointsCounter: {fileID: 1203650077}
+--- !u!114 &1560976249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560976244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d446b5c13042aab0cffb17015cfb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 4845849730828786061, guid: 67c142175c2a61443b0064c4012b4dbd, type: 3}
+  _minSpawnTime: 10
+  _maxSpawnTime: 20
+  _maxSpawnedObject: 10
+  _freeAreaSize: 1
 --- !u!1 &2136386912
 GameObject:
   m_ObjectHideFlags: 0

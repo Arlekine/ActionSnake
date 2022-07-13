@@ -23,9 +23,11 @@
           </e>
           <e p="FieldObjects" t="Include">
             <e p="FieldObject.cs" t="Include" />
-            <e p="FreeCellsTester.cs" t="Include" />
             <e p="StylePointsPill.cs" t="Include" />
             <e p="TeleportTrigger.cs" t="Include" />
+            <e p="Testing" t="Include">
+              <e p="FreeCellsTester.cs" t="Include" />
+            </e>
           </e>
           <e p="Global" t="Include">
             <e p="FieldCameraPositioner.cs" t="Include" />
@@ -41,6 +43,12 @@
             <e p="SnakeHead.cs" t="Include" />
             <e p="SnakeMover.cs" t="Include" />
             <e p="SnakeTail.cs" t="Include" />
+          </e>
+          <e p="Spawing" t="Include">
+            <e p="FieldObjectSpawner.cs" t="Include" />
+            <e p="FieldSpawnerBase.cs" t="Include" />
+            <e p="GenericFieldObjectSpawner.cs" t="Include" />
+            <e p="StylePointsPillSpawner.cs" t="Include" />
           </e>
           <e p="Style" t="Include">
             <e p="IExternalRankMultiplier.cs" t="Include" />
