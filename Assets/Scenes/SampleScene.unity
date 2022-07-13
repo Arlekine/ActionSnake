@@ -1036,6 +1036,7 @@ GameObject:
   - component: {fileID: 1180199310}
   - component: {fileID: 1180199311}
   - component: {fileID: 1180199312}
+  - component: {fileID: 1180199313}
   m_Layer: 0
   m_Name: SnakeHead
   m_TagString: Untagged
@@ -1071,10 +1072,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0ddde5f9d6e04f814c350098abe61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeForStep: 0.2
+  _initailTimeForStep: 0.2
   _minimumLength: 4
   _snakeTailPrefab: {fileID: 690846559375491591, guid: 03585298839ae784cac98de968aafba5, type: 3}
-  Length: 0
 --- !u!54 &1180199311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1104,6 +1104,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1180199313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180199308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c5553f70e544e28993e54eef405289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1203650074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,8 +1212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e065a73f2753d45bc7eb44cd8d90f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cellsWidthCount: 40
-  _cellsHeightCount: 20
+  _cellsWidthCount: 30
+  _cellsHeightCount: 15
   _cellSize: 0.5
   _cameraUIOffset: 1
   _fieldStartPosition: {fileID: 393208204}

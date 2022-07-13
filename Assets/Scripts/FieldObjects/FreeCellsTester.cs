@@ -49,7 +49,7 @@ public class FreeCellsTester : MonoBehaviour, ICellContent
         HighlightCells(_field.GetFreeCells(5));
     }
 
-    public void HighlightCells(List<Cell> cellsToHighlight)
+    public void HighlightCells(List<CellCoordinates> cellsToHighlight)
     {
         foreach (var cellsList in _cellsVisuals)
         {
@@ -61,15 +61,7 @@ public class FreeCellsTester : MonoBehaviour, ICellContent
 
         foreach (var cell in cellsToHighlight)
         {
-            var coordinates = _field.GetCellCoordinates(cell);
-            _cellsVisuals[coordinates.x][coordinates.y].GetComponent<Renderer>().material.color = Color.green;
+            _cellsVisuals[cell.X][cell.Y].GetComponent<Renderer>().material.color = Color.green;
         }
-    }
-
-    [EditorButton]
-    public void OccupyCell(int x, int y)
-    {
-        _field.AllCells[x][y].OccupyCell(this); 
-        _cellsVisuals[x][y].GetComponent<Renderer>().material.color = Color.red;
     }
 }

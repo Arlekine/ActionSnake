@@ -22,45 +22,43 @@ public class LevelCreater : MonoBehaviour
     {
         _field = new Field(_cellsWidthCount, _cellsHeightCount, _cellSize, _fieldStartPosition.position);
 
-        for (int i = 0; i < _field.AllCells.Count; i++)
+        for (int x = 0; x < _cellsWidthCount; x++)
         {
             _cellPoints.Add(new List<GameObject>());
-            for (int j = 0; j < _field.AllCells[i].Count; j++)
+            for (int y = 0; y < _cellsHeightCount; y++)
             {
                 var point = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 point.transform.parent = _fieldStartPosition;
-                point.transform.position = _field.AllCells[i][j].CenterWorldPosition;
+                point.transform.position = _field[x, y];
                 point.transform.localScale = Vector3.one * 0.1f;
 
-                _cellPoints[i].Add(point);
+                _cellPoints[x].Add(point);
 
-                // _field.AllCells[i][j].OnCellOccupied += (cell) =>
-                // {
-                //     var coordinates = _field.GetCellCoordinates(cell);
-                //     _cellPoints[coordinates.x][coordinates.y].GetComponent<Renderer>().material.color = Color.red;
-                // };
-                //
-                // _field.AllCells[i][j].OnCellFreed += (cell) =>
-                // {
-                //     var coordinates = _field.GetCellCoordinates(cell);
-                //     _cellPoints[coordinates.x][coordinates.y].GetComponent<Renderer>().material.color = Color.white;
-                // };
+                _field.OnCellOccupied += (coordinates, content) =>
+                {
+                    //_cellPoints[coordinates.X][coordinates.Y].GetComponent<Renderer>().material.color = Color.red;
+                };
+                
+                _field.OnCellFree += (coordinates) =>
+                {
+                    //_cellPoints[coordinates.X][coordinates.Y].GetComponent<Renderer>().material.color = Color.white;
+                };
 
-                if (i == 0 && j != 0)
-                    CreateTeleportTrigger(_field.AllCells[i][j].CenterWorldPosition, _field.AllCells[_field.AllCells.Count - 2][j]);
+                if (x == 0 && y != 0)
+                    CreateTeleportTrigger(_field[x,y], new CellCoordinates(_field.Width - 2, y));
                 
-                if (i == _field.AllCells.Count - 1 && j != _field.AllCells[i].Count - 1)
-                    CreateTeleportTrigger(_field.AllCells[i][j].CenterWorldPosition, _field.AllCells[1][j]);
+                if (x == _field.Width - 1 && y != _field.Height - 1)
+                    CreateTeleportTrigger(_field[x, y], new CellCoordinates(1,y));
                 
-                if (j == 0 && i != 0)
-                    CreateTeleportTrigger(_field.AllCells[i][j].CenterWorldPosition, _field.AllCells[i][_field.AllCells[i].Count - 2]);
+                if (y == 0 && x != 0)
+                    CreateTeleportTrigger(_field[x, y], new CellCoordinates(x, _field.Height - 2));
                 
-                if (j == _field.AllCells[i].Count - 1  && i != _field.AllCells.Count - 1)
-                    CreateTeleportTrigger(_field.AllCells[i][j].CenterWorldPosition, _field.AllCells[i][1]);
+                if (y == _field.Height - 1  && x != _field.Width - 1)
+                    CreateTeleportTrigger(_field[x, y], new CellCoordinates(x,1));
             }
         }
         
-        _snake.Init(_field, _field.AllCells[1][1], MoveDirection.Right);
+        _snake.Init(_field, new CellCoordinates(1, 1), MoveDirection.Right);
         
         var cameraPositioner = new FieldCameraPositioner(_camera, _cameraUIOffset);
         cameraPositioner.PositionCamera(_field);
@@ -70,7 +68,7 @@ public class LevelCreater : MonoBehaviour
     }
 
 
-    private void CreateTeleportTrigger(Vector3 spawnPosition, Cell teleportationCell)
+    private void CreateTeleportTrigger(Vector3 spawnPosition, CellCoordinates teleportationCell)
     {
         var teleport = Instantiate(_teleportTriggerPrefab, spawnPosition, Quaternion.identity);
         teleport.SetTeleportationCell(teleportationCell);

@@ -1,14 +1,44 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Field
 {
-    public List<List<Cell>> AllCells => _allCells;
+    private class Cell
+    {
+        public Vector3 CenterWorldPosition => _centerWorldPosition;
 
-    public int Width => _allCells.Count;
-    public int Height => _allCells[0].Count;
+        public bool IsCellFree => _currentContent == null;
+
+        public ICellContent CellContent => _currentContent;
+
+        public void OccupyCell(ICellContent content)
+        {
+            _currentContent = content;
+        }
+
+        public bool FreeCell(ICellContent content)
+        {
+            if (_currentContent == content)
+            {
+                _currentContent = null;
+                return true;
+            }
+
+            return false;
+        }
+
+        private ICellContent _currentContent;
+        private Vector3 _centerWorldPosition;
+
+        public Cell(Vector3 centerWorldPosition)
+        {
+            _centerWorldPosition = centerWorldPosition;
+        }
+    }
+
+    public Action<CellCoordinates, ICellContent> OnCellOccupied;
+    public Action<CellCoordinates> OnCellFree;
     
     private List<List<Cell>> _allCells = new List<List<Cell>>();
     private List<Cell> _occupiedCells = new List<Cell>();
@@ -16,6 +46,26 @@ public class Field
 
     private float _cellSize;
 
+    //public List<List<Cell>> AllCells => _allCells;
+
+    public int Width => _allCells.Count;
+    public int Height => _allCells[0].Count;
+
+    public float CellS => _cellSize;
+
+    public Vector3 this[CellCoordinates coordinates] => this[coordinates.X, coordinates.Y];
+
+    public Vector3 this[int x, int y]
+    {
+        get
+        {
+            if (IsCoordinatesInField(x, y) == false)
+                throw new ArgumentException("Attempt to get cell out of field");
+
+            return _allCells[x][y].CenterWorldPosition;
+        }
+    }
+    
     public Field(int width, int height, float cellSize, Vector3 worldFieldStartPosition)
     {
         _cellSize = cellSize;
@@ -67,9 +117,19 @@ public class Field
         return isAreaFree;
     }
 
-    public List<Cell> GetFreeCells(int freeArea = 0)
+    public bool IsCoordinatesInField(CellCoordinates coordinates)
     {
-        var freeCells = new List<Cell>();
+        return IsCoordinatesInField(coordinates.X, coordinates.Y);
+    }
+    
+    public bool IsCoordinatesInField(int x, int y)
+    {
+        return x >= 0 && y >= 0 && x < _allCells.Count && y < _allCells[0].Count;
+    }
+
+    public List<CellCoordinates> GetFreeCells(int freeArea = 0)
+    {
+        var freeCells = new List<CellCoordinates>();
         
         for (int x = 0; x < _allCells.Count; x++)
         {
@@ -78,7 +138,7 @@ public class Field
                 if (_allCells[x][y].IsCellFree)
                 {
                     if (freeArea == 0 || IsAreaAroundCellFree(x, y, freeArea))
-                        freeCells.Add(_allCells[x][y]);
+                        freeCells.Add(new CellCoordinates(x, y));
                 }
             }
         }
@@ -86,54 +146,42 @@ public class Field
         return freeCells;
     }
 
-    public float GetCellsSize()
+    public List<CellCoordinates> GetCellNeighbors(CellCoordinates coordinates)
     {
-        return _cellSize;
-    }
-
-    public List<Cell> GetCellNeighbors(Cell cell)
-    {
-        var neighbors = new List<Cell>();
+        var neighbors = new List<CellCoordinates>();
         var directions = MoveDirection.GetAllPossibleDirections();
 
         foreach (var direction in directions)
         {
-            if (HasCellAtDirection(cell, direction))
-                neighbors.Add(GetCellAtDirection(cell, direction));
+            var checkCell = coordinates + direction;
+            if (IsCoordinatesInField(checkCell))
+                neighbors.Add(checkCell);
         }
 
         return neighbors;
     }
 
-    public Vector2Int GetCellCoordinates(Cell cell)
+    public bool IsCellFree(CellCoordinates coordinates)
     {
-        var cellCoordinates = new Vector2Int();
-        cellCoordinates.x = Mathf.RoundToInt((cell.CenterWorldPosition.x - _allCells[0][0].CenterWorldPosition.x ) / _cellSize);
-        cellCoordinates.y = Mathf.RoundToInt((cell.CenterWorldPosition.z - _allCells[0][0].CenterWorldPosition.z ) / _cellSize);
-
-        return cellCoordinates;
+        return _allCells[coordinates.X][coordinates.Y].IsCellFree;
+    }
+    
+    public ICellContent GetCellContent(CellCoordinates coordinates)
+    {
+        return _allCells[coordinates.X][coordinates.Y].CellContent;
     }
 
-    public bool HasCellAtDirection(Cell startCell, MoveDirection direction)
+    public void OccupyCell(CellCoordinates coordinates, ICellContent cellContent)
     {
-        var cellCoordinates = GetCellCoordinates(startCell);
-        
-        if (_allCells[cellCoordinates.x][cellCoordinates.y] != startCell)
-            throw new ArgumentException($"Attempt to get cell that is not presented on field");
-
-        cellCoordinates += direction.FieldCoordinatesDirection;
-
-        return cellCoordinates.x >= 0 && cellCoordinates.y >= 0 && cellCoordinates.x < _allCells.Count && cellCoordinates.y < _allCells[0].Count;
+        _allCells[coordinates.X][coordinates.Y].OccupyCell(cellContent);
+        OnCellOccupied?.Invoke(coordinates, cellContent);
+        //TODO: add removing cell content from another cell
     }
 
-    public Cell GetCellAtDirection(Cell startCell, MoveDirection direction)
+    public void FreeCell(CellCoordinates coordinates, ICellContent contentToFreeFrom)
     {
-        if (HasCellAtDirection(startCell, direction) == false)
-            throw new Exception("Attempt to get cell out of field");
-        
-        var cellCoordinates = GetCellCoordinates(startCell);
-        cellCoordinates += direction.FieldCoordinatesDirection;
-        
-        return _allCells[cellCoordinates.x][cellCoordinates.y];
+        if (_allCells[coordinates.X][coordinates.Y].FreeCell(contentToFreeFrom))
+            OnCellFree?.Invoke(coordinates);
+        //TODO: add checks
     }
 }

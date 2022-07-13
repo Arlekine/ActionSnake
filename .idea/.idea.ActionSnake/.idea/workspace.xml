@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="426a0790-551c-49f5-b320-d61455d3a7f7" name="Default Changelist" comment="" />
+    <list default="true" id="426a0790-551c-49f5-b320-d61455d3a7f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,73 +28,73 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/StylePointsUI/StylePointsView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/ICellContent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/ICellContent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StylePointsDebug.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/ISnakeHazard.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleRank.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/IExternalRankMultiplier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AB7DE693-7A44-48B0-A6CC-D59E9820599A/32/c810c37f/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/SnakeStepTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/IDestructible.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/ISnakeHazard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/Mover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StylePointsCounter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleLevel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleRank.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StylePointsDebug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/IExternalRankMultiplier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/SnakeStepTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/StylePointsUI/StylePointsView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/IDestructible.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SnakeStepTime.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/CellCoordinates.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/Teleport.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SnakeStepTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StylePointsDebug.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StylePointsCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/SnakeStepTimer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/IDestructible.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/ISnakeHazard.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleRank.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/StylePointsUI/StylePointsView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/ScorePill.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Global/FieldCameraPositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Field/CellCoordinates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/Mover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" />
       </list>
     </option>
   </component>
@@ -135,6 +152,8 @@
       <workItem from="1656696916522" duration="2253000" />
       <workItem from="1656749513785" duration="17623000" />
       <workItem from="1656833688170" duration="13878000" />
+      <workItem from="1657648644066" duration="3093000" />
+      <workItem from="1657698309197" duration="15452000" />
     </task>
     <servers />
   </component>
@@ -212,10 +231,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="375" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1656787631121" />
-    <state x="937" y="331" key="run.anything.popup" timestamp="1653247155460">
+    <state x="937" y="331" width="672" height="677" key="run.anything.popup" timestamp="1657718305851">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="937" y="331" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1653247155460" />
+    <state x="937" y="331" width="672" height="677" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1657718305851" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1656614143618">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

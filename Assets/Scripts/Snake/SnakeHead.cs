@@ -8,18 +8,21 @@ public class SnakeHead : SnakeMover, IDestructible
 {
     public event Action OnSnakeNewMoveStart;
     
-    [SerializeField] private float _timeForStep;
+    [SerializeField] private float _initailTimeForStep;
     [SerializeField] private int _minimumLength;
     [SerializeField] private SnakeTail _snakeTailPrefab;
 
     private List<SnakeTail> _tails = new List<SnakeTail>();
 
-    public int Length;// => _tails.Count;
+    public int Length => _tails.Count;
     
-    public override void Init(Field field, Cell startCell, MoveDirection startDirection)
+    public override void Init(Field field, CellCoordinates startCell, MoveDirection startDirection)
     {
         base.Init(field, startCell, startDirection);
-        Speed = field.GetCellsSize() / _timeForStep;
+
+        TimeForStep = _initailTimeForStep;
+        _mover.OnMoveComplete += StartNextMove;
+        StartMove(startCell, startDirection);
     }
 
     [EditorButton]
@@ -44,7 +47,7 @@ public class SnakeHead : SnakeMover, IDestructible
         }
     }
 
-    protected override void Update()
+    protected void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) && _currentDirection != MoveDirection.Right)
             SetNewDirection(MoveDirection.Left);
@@ -60,9 +63,6 @@ public class SnakeHead : SnakeMover, IDestructible
         
         if (Input.GetKeyDown(KeyCode.Space))
             AddTail();
-
-        Move();
-        Length = _tails.Count;
     }
 
     private void OnDestroy()
@@ -71,18 +71,6 @@ public class SnakeHead : SnakeMover, IDestructible
         {
             tail.OnDeathCollision -= CutTailsFromTarget;
         }
-    }
-
-    protected override void Move()
-    {
-        if ((_destinationCell.CenterWorldPosition - transform.position).sqrMagnitude <= Speed * Time.deltaTime)
-        {
-            StartNextMove(_destinationCell, _nextDirection);
-            OnSnakeNewMoveStart?.Invoke();
-            return;
-        }
-        
-        base.Move();
     }
 
     private void CutTailsFromTarget(SnakeTail target)
@@ -94,16 +82,22 @@ public class SnakeHead : SnakeMover, IDestructible
         int tailsAmountToCut = _tails.Count - targetIndex;
         CutTails(tailsAmountToCut);
     }
+    
+    private void StartNextMove()
+    {
+        StartMove(_destinationCell, _nextDirection);
+        OnSnakeNewMoveStart?.Invoke();
+    }
 
     public void AddTail()
     {
         var newTail = Instantiate(_snakeTailPrefab);
-        SnakeMover prevMover = _tails.Count > 0 ? (SnakeMover)_tails.Last() : this;
+        SnakeMover lastTail = _tails.Count > 0 ? (SnakeMover)_tails.Last() : this;
         
         newTail.enabled = false;
-        newTail.Speed = Speed;
+        newTail.TimeForStep = TimeForStep;
         
-        newTail.Init(_field, _field.GetCellAtDirection(prevMover.StartCell, MoveDirection.GetOppositeDirection(prevMover.CurrentDirection)), prevMover.CurrentDirection);
+        newTail.Init(_field, lastTail.StartCell + MoveDirection.GetOppositeDirection(lastTail.CurrentDirection), lastTail.CurrentDirection);
         newTail.OnDeathCollision += CutTailsFromTarget;
 
         _tails.Add(newTail);
@@ -122,23 +116,17 @@ public class SnakeHead : SnakeMover, IDestructible
         return _tails.IndexOf(tail);
     }
 
-    public override void StartNextMove(Cell startCell, MoveDirection direction)
+    public override void StartMove(CellCoordinates startCell, MoveDirection direction)
     {
         for (int i = _tails.Count - 1; i >= 0; i--)
         {
             SnakeMover prevMover = i > 0 ? (SnakeMover)_tails[i - 1] : this;
 
             _tails[i].enabled = true;
-            _tails[i].StartNextMove(prevMover.StartCell, prevMover.CurrentDirection);
+            _tails[i].StartMove(prevMover.StartCell, prevMover.CurrentDirection);
         }
         
-        base.StartNextMove(startCell, direction);
-    }
-
-    public void TeleportToCell(Cell cell)
-    {
-        transform.position = cell.CenterWorldPosition;
-        StartNextMove(cell, _nextDirection);
+        base.StartMove(startCell, direction);
     }
 
     [EditorButton]

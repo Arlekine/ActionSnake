@@ -10,12 +10,14 @@
     protected override int GetSnakeStylePointsForStep(SnakeHead snakeHead)
     {
         bool possibleDeadAHead = false;
-        if (snakeHead.Field.HasCellAtDirection(snakeHead.StartCell, snakeHead.PreviousDirection))
+        
+        var previousPossibleCell = snakeHead.StartCell + snakeHead.PreviousDirection;
+        
+        if (snakeHead.Field.IsCoordinatesInField(previousPossibleCell))
         {
-            var targetCellBeforeMoveChange = snakeHead.Field.GetCellAtDirection(snakeHead.StartCell, snakeHead.PreviousDirection);
-            possibleDeadAHead = targetCellBeforeMoveChange.IsCellFree == false && targetCellBeforeMoveChange.CellContent is ISnakeHazard;
+            possibleDeadAHead = snakeHead.Field.IsCellFree(previousPossibleCell) == false && snakeHead.Field.GetCellContent(previousPossibleCell) is ISnakeHazard;
         }
-
+        
         return possibleDeadAHead ? _pointsForMove : 0;
     }
 }

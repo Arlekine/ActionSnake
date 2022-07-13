@@ -11,23 +11,23 @@
 
     protected override int GetSnakeStylePointsForStep(SnakeHead snakeHead)
     {
-        var checkCell = snakeHead.DestinationCell;
+        var field = snakeHead.Field;
+        var nextCell = snakeHead.DestinationCell;
         var pointsToAdd = 0;
         
         for (int i = 0; i < _distanceToActivateMove; i++)
         {
-            if (snakeHead.Field.HasCellAtDirection(checkCell, snakeHead.CurrentDirection) == false)
+            nextCell = nextCell + snakeHead.CurrentDirection;
+            if (snakeHead.Field.IsCoordinatesInField(nextCell) == false)
                 break;
-
-            checkCell = snakeHead.Field.GetCellAtDirection(checkCell, snakeHead.CurrentDirection);
-
-            if (checkCell.IsCellFree == false)
+        
+            if (field.IsCellFree(nextCell) == false)
             {
-                if (checkCell.CellContent is SnakeTail tail)
+                if (field.GetCellContent(nextCell) is SnakeTail tail)
                 {
                     var isFollowTail = snakeHead.GetTailIndex(tail) == snakeHead.Length - 1 &&
                                        tail.CurrentDirection == snakeHead.CurrentDirection;
-
+        
                     if (isFollowTail)
                         pointsToAdd = _pointsPerStep;
                 }

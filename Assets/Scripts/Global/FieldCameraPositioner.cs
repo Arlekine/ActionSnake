@@ -13,12 +13,12 @@ public class FieldCameraPositioner
 
     public void PositionCamera(Field field)
     {
-        var leftDownCell = field.AllCells[0][0];
-        var rightUpCell = field.AllCells[field.Width - 1][field.Height - 1];
+        var leftDownCell = field[0, 0];
+        var rightUpCell = field[field.Width - 1, field.Height - 1];
 
-        var visibleFieldHeight = Mathf.Abs(field.AllCells[0][1].CenterWorldPosition.z - field.AllCells[0][field.Height - 1].CenterWorldPosition.z) + _cameraZOffset * 2;
+        var visibleFieldHeight = Mathf.Abs(field[0, 1].z - field[0, field.Height - 1].z) + _cameraZOffset * 2;
         
-        Vector3 cameraPosition = new Vector3((leftDownCell.CenterWorldPosition.x + rightUpCell.CenterWorldPosition.x) / 2f, _camera.transform.position.y, (leftDownCell.CenterWorldPosition.z + rightUpCell.CenterWorldPosition.z) / 2f + _cameraZOffset);
+        Vector3 cameraPosition = new Vector3((leftDownCell.x + rightUpCell.x) / 2f, _camera.transform.position.y, (leftDownCell.z + rightUpCell.z) / 2f + _cameraZOffset);
         _camera.transform.position = cameraPosition;
 
         _camera.orthographicSize = visibleFieldHeight * 0.5f;

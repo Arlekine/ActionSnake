@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class LockStateMove : StyleMove
 {
+    private enum CellCheckingState
+    {
+        Unchecked,
+        InCheckingQueue,
+        Checked
+    }
+    
     private int _statePoints;
     private int _stateMultiplier;
     
@@ -16,39 +23,50 @@ public class LockStateMove : StyleMove
     protected override int GetSnakeStylePointsForStep(SnakeHead snakeHead)
     {
         var field = snakeHead.Field;
-
+        
         bool isLockedState = false;
-        var fieldCellsAmount = field.AllCells.Count * field.AllCells[0].Count;
-        var cellsToCheck = new List<Cell>();
-        var checkedCells = new List<Cell>();
+        var fieldCellsAmount = field.Width * field.Height;
 
-        cellsToCheck.Add(snakeHead.DestinationCell);
-        while (checkedCells.Count < fieldCellsAmount)
+        var checkedCells = new CellCheckingState[field.Width, field.Height];
+        var cellsToCheck = new Queue<CellCoordinates>();
+
+        var checkedCellsAmount = 0;
+        
+        cellsToCheck.Enqueue(snakeHead.DestinationCell);
+        
+        while (checkedCellsAmount < fieldCellsAmount)
         {
             if (cellsToCheck.Count == 0)
             {
-                Debug.Log("Lock state");
-                isLockedState = checkedCells.Count < fieldCellsAmount * 0.5f;
+                isLockedState = checkedCellsAmount < fieldCellsAmount * 0.5f;
                 break;
             }
 
-            var cellNeighbors = field.GetCellNeighbors(cellsToCheck[0]);
-
+            var cellToCheck = cellsToCheck.Dequeue();
+            var cellNeighbors = field.GetCellNeighbors(cellToCheck);
+        
             foreach (var neighbor in cellNeighbors)
             {
-                if (neighbor.IsCellFree && checkedCells.Contains(neighbor) == false && cellsToCheck.Contains(neighbor) == false)
-                    cellsToCheck.Add(neighbor);
-                else if (checkedCells.Contains(neighbor) == false)
-                    checkedCells.Add(neighbor);
+                if (field.IsCellFree(neighbor) && checkedCells[neighbor.X, neighbor.Y] == CellCheckingState.Unchecked)
+                {
+                    cellsToCheck.Enqueue(neighbor);
+                    checkedCells[neighbor.X, neighbor.Y] = CellCheckingState.InCheckingQueue;
+
+                }
+                else if (checkedCells[neighbor.X, neighbor.Y] == CellCheckingState.Unchecked)
+                {
+                    checkedCellsAmount++;
+                    checkedCells[neighbor.X, neighbor.Y] = CellCheckingState.Checked;
+                }
             }
             
-            if (checkedCells.Contains(cellsToCheck[0]) == false)
-                checkedCells.Add(cellsToCheck[0]);
-            
-            cellsToCheck.RemoveAt(0);
+            if (checkedCells[cellToCheck.X, cellToCheck.Y] != CellCheckingState.Checked)
+            {
+                checkedCells[cellToCheck.X, cellToCheck.Y] = CellCheckingState.Checked;
+                checkedCellsAmount++;
+            }
         }
-            
-        Debug.Log(checkedCells.Count + " - " + fieldCellsAmount);
+        
         return isLockedState ? _statePoints : 0;
     }
 }

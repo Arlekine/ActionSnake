@@ -17,6 +17,7 @@
         <e p="Scripts" t="Include">
           <e p="Field" t="Include">
             <e p="Cell.cs" t="Include" />
+            <e p="CellCoordinates.cs" t="Include" />
             <e p="Field.cs" t="Include" />
             <e p="ICellContent.cs" t="Include" />
           </e>
@@ -29,17 +30,18 @@
           <e p="Global" t="Include">
             <e p="FieldCameraPositioner.cs" t="Include" />
             <e p="LevelCreater.cs" t="Include" />
+            <e p="SnakeStepTime.cs" t="Include" />
           </e>
           <e p="Snake" t="Include">
             <e p="IDestructible.cs" t="Include" />
             <e p="ISnakeHazard.cs" t="Include" />
             <e p="MoveDirection.cs" t="Include" />
+            <e p="Mover.cs" t="Include" />
             <e p="SnakeDeathTrigger.cs" t="Include" />
             <e p="SnakeHead.cs" t="Include" />
             <e p="SnakeMover.cs" t="Include" />
             <e p="SnakeTail.cs" t="Include" />
           </e>
-          <e p="SnakeStepTime.cs" t="Include" />
           <e p="Style" t="Include">
             <e p="IExternalRankMultiplier.cs" t="Include" />
             <e p="SnakeStepTimer.cs" t="Include" />

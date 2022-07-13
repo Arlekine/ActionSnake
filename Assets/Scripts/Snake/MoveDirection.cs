@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveDirection
+public struct MoveDirection
 {
-    public Vector3 WorldDirection => _worldDirection;
-    public Vector2Int FieldCoordinatesDirection => _fieldCoordinatesDirection;
+    public readonly int X;
+    public readonly int Y;
 
-    private Vector3 _worldDirection;
-    private Vector2Int _fieldCoordinatesDirection;
-
-    private MoveDirection(Vector3 worldDirection)
+    private MoveDirection(int x, int y)
     {
-        _worldDirection = worldDirection;
-        _fieldCoordinatesDirection = new Vector2Int((int)worldDirection.x, (int)worldDirection.z);
+        X = x;
+        Y = y;
     }
 
-    public static MoveDirection Right = new MoveDirection(new Vector3(1f, 0f, 0f));
-    public static MoveDirection Left = new MoveDirection(new Vector3(-1f, 0f, 0f));
-    public static MoveDirection Up = new MoveDirection(new Vector3(0f, 0f, 1f));
-    public static MoveDirection Down = new MoveDirection(new Vector3(0f, 0f, -1f));
+    public static MoveDirection Right = new MoveDirection(1, 0);
+    public static MoveDirection Left = new MoveDirection(-1, 0);
+    public static MoveDirection Up = new MoveDirection(0, 1);
+    public static MoveDirection Down = new MoveDirection(0, -1);
 
     public static List<MoveDirection> GetAllPossibleDirections()
     {
@@ -35,18 +32,17 @@ public class MoveDirection
 
     public static MoveDirection GetOppositeDirection(MoveDirection direction)
     {
-        var newDirection = new MoveDirection(-direction.WorldDirection);
-        return newDirection;
+        return new MoveDirection(-direction.X, -direction.Y);
     }
 
     public static MoveDirection[] GetSideDirections(MoveDirection forwardDirection)
     {
         MoveDirection[] sideDirections;
         
-        var isForwardVertical = Math.Abs(forwardDirection.WorldDirection.x) < float.Epsilon;
+        var isForwardVertical = Math.Abs(forwardDirection.X) == 0;
         if (isForwardVertical)
         {
-            var isForwardUp = forwardDirection.WorldDirection.z > 0;
+            var isForwardUp = forwardDirection.Y > 0;
             if (isForwardUp)
                 sideDirections = new []{Left, Right};
             else
@@ -54,7 +50,7 @@ public class MoveDirection
         }
         else
         {
-            var isForwardRight = forwardDirection.WorldDirection.x > 0;
+            var isForwardRight = forwardDirection.X > 0;
             if (isForwardRight)
                 sideDirections = new []{Up, Down};
             else
@@ -66,14 +62,21 @@ public class MoveDirection
 
     public static bool operator ==(MoveDirection directionA, MoveDirection directionB)
     {
-        bool isDirectionsTheSame = directionA.FieldCoordinatesDirection.x == directionB.FieldCoordinatesDirection.x &&
-                                   directionA.FieldCoordinatesDirection.y == directionB.FieldCoordinatesDirection.y;
-
-        return isDirectionsTheSame;
+        return directionA.X == directionB.X && directionA.Y == directionB.Y;
     }
     
     public static bool operator !=(MoveDirection directionA, MoveDirection directionB)
     {
-        return (directionA == directionB) == false;
+        return directionA.X != directionB.X || directionA.Y != directionB.Y;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is MoveDirection direction)
+        {
+            return this == direction;
+        }
+
+        return false;
     }
 }

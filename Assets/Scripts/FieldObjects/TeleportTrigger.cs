@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class TeleportTrigger : MonoBehaviour
 {
-    private Cell _teleportationCell;
+    private CellCoordinates _teleportationCell;
 
-    public void SetTeleportationCell(Cell cell)
+    public void SetTeleportationCell(CellCoordinates cell)
     {
         _teleportationCell = cell;
     }

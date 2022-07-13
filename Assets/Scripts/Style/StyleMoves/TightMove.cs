@@ -15,25 +15,22 @@ public class TightMove : StyleMove
         var resultPoints = 0;
         var field = snakeHead.Field;
         var sideDirections = MoveDirection.GetSideDirections(snakeHead.CurrentDirection);
-
+        
         for (int i = 0; i < sideDirections.Length; i++)
         {
             var discoverCell = snakeHead.DestinationCell;
-
-            while (field.HasCellAtDirection(discoverCell, sideDirections[i]))
+            var nextCell = discoverCell + sideDirections[i];
+        
+            while (field.IsCoordinatesInField(nextCell))
             {
-                if (field.HasCellAtDirection(discoverCell, sideDirections[i]) == false)
-                    break;
-
-                var nextCell = field.GetCellAtDirection(discoverCell, sideDirections[i]);
-                var nextCellHasHazard = nextCell.IsCellFree == false && nextCell.CellContent is SnakeTail;
-
+                var nextCellHasHazard = field.IsCellFree(nextCell) == false && field.GetCellContent(nextCell) is SnakeTail;
+        
                 if (nextCellHasHazard)
                     resultPoints += _pointsPerHazard;
                 else
                     break;
-
-                discoverCell = nextCell;
+                
+                nextCell = nextCell + sideDirections[i];
             }
         }
 
