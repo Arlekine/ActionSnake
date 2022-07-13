@@ -80,6 +80,13 @@ public class SnakeHead : SnakeMover, IDestructible
 
         var targetIndex = _tails.IndexOf(target);
         int tailsAmountToCut = _tails.Count - targetIndex;
+
+        if (tailsAmountToCut > (_tails.Count - _minimumLength))
+        {
+            Die();
+            return;
+        }
+
         CutTails(tailsAmountToCut);
     }
     

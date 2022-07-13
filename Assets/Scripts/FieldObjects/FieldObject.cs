@@ -15,7 +15,7 @@ public abstract class FieldObject : MonoBehaviour, ICellContent
         }
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         OnObjectDestroyed?.Invoke(this);
     }

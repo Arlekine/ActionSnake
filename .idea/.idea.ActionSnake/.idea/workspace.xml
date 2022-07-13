@@ -4,16 +4,14 @@
     <list default="true" id="426a0790-551c-49f5-b320-d61455d3a7f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionSnake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snake/SnakeTail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snake/SnakeTail.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FreeCellsTester.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldObjects/TeleportTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/Mover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawing/FieldObjectSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawing/FieldObjectSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawing/StylePointsPillSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldObjects/BlockSpawnPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/ICellContent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Cell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" root0="FORCE_HIGHLIGHTING" />
@@ -69,7 +68,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StylePointsDebug.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StylePointsCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/SnakeStepTimer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/IDestructible.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/ISnakeHazard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleRank.cs" />
@@ -82,14 +80,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/MoveDirection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/DeadAHeadMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/UroborosMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/TightMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/LockStateMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Style/StyleMoves/StyleMoveInitializer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Field/CellCoordinates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/Testing/PointsPillTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Field/ICellContent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/Mover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawing/StylePointsPillSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/StylePointsPill.cs" />
@@ -97,8 +93,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Global/LevelCreater.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeDeathTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawing/FieldObjectSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/FieldObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Field/Field.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawing/FieldObjectSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeTail.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeHead.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FieldObjects/BlockSpawnPoint.cs" />
       </list>
     </option>
   </component>
@@ -157,7 +158,7 @@
       <workItem from="1656749513785" duration="17623000" />
       <workItem from="1656833688170" duration="13878000" />
       <workItem from="1657648644066" duration="3093000" />
-      <workItem from="1657698309197" duration="24125000" />
+      <workItem from="1657698309197" duration="25977000" />
     </task>
     <servers />
   </component>

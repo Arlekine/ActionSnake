@@ -61,6 +61,9 @@ public abstract class FieldObjectSpawner<T> : FieldSpawnerBase where T : FieldOb
         
         fieldObject.OnObjectDestroyed -= ClearObjectFormList;
         _spawnedObject.Remove(fieldObject);
+        
+        _field.FreeCell(fieldObject);
+        
         print(_spawnedObject.Count);
     }
 
@@ -73,11 +76,20 @@ public abstract class FieldObjectSpawner<T> : FieldSpawnerBase where T : FieldOb
         }
 
         var possibleSpawnPoints = _field.GetFreeCells(_freeAreaSize);
+
+        if (possibleSpawnPoints.Count == 0)
+        {
+            RestartTimer();
+            return;
+        }
+
         var spawnPointIndex = Random.Range(0, possibleSpawnPoints.Count);
         var spawnPoint = possibleSpawnPoints[spawnPointIndex];
 
         var newObject = Instantiate(_objectPrefab, _field[spawnPoint], Quaternion.identity);
         InitializeObject(newObject);
+        
+        _field.OccupyCell(spawnPoint, newObject);
 
         _spawnedObject.Add(newObject);
         newObject.OnObjectDestroyed += ClearObjectFormList;

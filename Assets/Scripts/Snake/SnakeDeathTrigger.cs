@@ -7,10 +7,10 @@ public class SnakeDeathTrigger : MonoBehaviour, ISnakeHazard
 {
     private void OnTriggerEnter(Collider other)
     {
-        var snake = other.GetComponent<SnakeHead>();
-        if (snake != null)
+        var destructable = other.GetComponent<IDestructible>();
+        if (destructable != null)
         {
-            snake.Die();
+            destructable.Die();
         }
     }
 }

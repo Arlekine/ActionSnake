@@ -184,4 +184,19 @@ public class Field
             OnCellFree?.Invoke(coordinates);
         //TODO: add checks
     }
+
+    public void FreeCell(ICellContent content)
+    {
+        foreach (var cellList in _allCells)
+        {
+            foreach (var cell in cellList)
+            {
+                if (cell.IsCellFree == false && cell.CellContent == content)
+                {
+                    cell.FreeCell(content);
+                    return;
+                }
+            }
+        }
+    }
 }

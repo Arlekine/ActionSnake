@@ -9,7 +9,7 @@ public class SnakeTail : SnakeMover, IDestructible, ISnakeHazard
     
     public void Cut()
     {
-        DestroyImmediate(this.gameObject);
+        Destroy(gameObject);
     }
 
     [EditorButton]
