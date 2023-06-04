@@ -10,14 +10,14 @@ public class Field
 
         public bool IsCellFree => _currentContent == null;
 
-        public ICellContent CellContent => _currentContent;
+        public CellContent CellContent => _currentContent;
 
-        public void OccupyCell(ICellContent content)
+        public void OccupyCell(CellContent content)
         {
             _currentContent = content;
         }
 
-        public bool FreeCell(ICellContent content)
+        public bool FreeCell(CellContent content)
         {
             if (_currentContent == content)
             {
@@ -28,7 +28,7 @@ public class Field
             return false;
         }
 
-        private ICellContent _currentContent;
+        private CellContent _currentContent;
         private Vector3 _centerWorldPosition;
 
         public Cell(Vector3 centerWorldPosition)
@@ -37,7 +37,7 @@ public class Field
         }
     }
 
-    public Action<CellCoordinates, ICellContent> OnCellOccupied;
+    public Action<CellCoordinates, CellContent> OnCellOccupied;
     public Action<CellCoordinates> OnCellFree;
     
     private List<List<Cell>> _allCells = new List<List<Cell>>();
@@ -166,26 +166,26 @@ public class Field
         return _allCells[coordinates.X][coordinates.Y].IsCellFree;
     }
     
-    public ICellContent GetCellContent(CellCoordinates coordinates)
+    public CellContent GetCellContent(CellCoordinates coordinates)
     {
         return _allCells[coordinates.X][coordinates.Y].CellContent;
     }
 
-    public void OccupyCell(CellCoordinates coordinates, ICellContent cellContent)
+    public void OccupyCell(CellCoordinates coordinates, CellContent cellContent)
     {
         _allCells[coordinates.X][coordinates.Y].OccupyCell(cellContent);
         OnCellOccupied?.Invoke(coordinates, cellContent);
         //TODO: add removing cell content from another cell
     }
 
-    public void FreeCell(CellCoordinates coordinates, ICellContent contentToFreeFrom)
+    public void FreeCell(CellCoordinates coordinates, CellContent contentToFreeFrom)
     {
         if (_allCells[coordinates.X][coordinates.Y].FreeCell(contentToFreeFrom))
             OnCellFree?.Invoke(coordinates);
         //TODO: add checks
     }
 
-    public void FreeCell(ICellContent content)
+    public void FreeCell(CellContent content)
     {
         foreach (var cellList in _allCells)
         {

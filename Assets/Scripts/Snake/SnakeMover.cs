@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Mover))]
-public class SnakeMover : MonoBehaviour, ICellContent
+public class SnakeMover : MovingCellContent
 {
     public CellCoordinates StartCell => _startCell;
     public CellCoordinates DestinationCell => _destinationCell;
@@ -61,16 +61,17 @@ public class SnakeMover : MonoBehaviour, ICellContent
     {
         transform.position = _field[startCell];
         _startCell = startCell;
-        
-        _field.FreeCell(_destinationCell, this);
 
         _destinationCell = startCell + direction;
         
-        _field.OccupyCell(_destinationCell, this);
-
         _previousDirection = _currentDirection;
         _currentDirection = direction;
         
         _mover.Move(_field[_startCell], _field[_destinationCell], TimeForStep);
+    }
+
+    private void OnDestroy()
+    {
+        _field.FreeCell(_destinationCell, this);
     }
 }

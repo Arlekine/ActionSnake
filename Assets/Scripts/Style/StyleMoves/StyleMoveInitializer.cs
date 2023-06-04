@@ -22,9 +22,9 @@ public class StyleMoveInitializer : MonoBehaviour
 
     private void Awake()
     {
-        //var tightMove = new TightMove(_snakeHead, _stylePointsCounter, _tightMovePointsPerHazard);
-        //var deadAHead = new DeadAHeadMove(_snakeHead, _stylePointsCounter, _deadAHeadMove);
-        //var uroboros = new UroborosMove(_snakeHead, _stylePointsCounter, _uroborosMove, _uroborosDistance);
+        var tightMove = new TightMove(_snakeHead, _stylePointsCounter, _tightMovePointsPerHazard);
+        var deadAHead = new DeadAHeadMove(_snakeHead, _stylePointsCounter, _deadAHeadMove);
+        var uroboros = new UroborosMove(_snakeHead, _stylePointsCounter, _uroborosMove, _uroborosDistance);
         var lockState = new LockStateMove(_snakeHead, _stylePointsCounter, _lockStatePoints, _lockStateRankMultiplier);
     }
 }

@@ -17,9 +17,11 @@
         <e p="Scripts" t="Include">
           <e p="Field" t="Include">
             <e p="Cell.cs" t="Include" />
+            <e p="CellContent.cs" t="Include" />
             <e p="CellCoordinates.cs" t="Include" />
             <e p="Field.cs" t="Include" />
-            <e p="ICellContent.cs" t="Include" />
+            <e p="FieldObjectsSpawner.cs" t="Include" />
+            <e p="MovingCellContent.cs" t="Include" />
           </e>
           <e p="FieldObjects" t="Include">
             <e p="BlockSpawnPoint.cs" t="Include" />
@@ -32,7 +34,7 @@
           </e>
           <e p="Global" t="Include">
             <e p="FieldCameraPositioner.cs" t="Include" />
-            <e p="LevelCreater.cs" t="Include" />
+            <e p="LevelCreator.cs" t="Include" />
             <e p="SnakeStepTime.cs" t="Include" />
           </e>
           <e p="Snake" t="Include">
@@ -41,6 +43,7 @@
             <e p="MoveDirection.cs" t="Include" />
             <e p="Mover.cs" t="Include" />
             <e p="SnakeDeathTrigger.cs" t="Include" />
+            <e p="SnakeGrower.cs" t="Include" />
             <e p="SnakeHead.cs" t="Include" />
             <e p="SnakeMover.cs" t="Include" />
             <e p="SnakeTail.cs" t="Include" />

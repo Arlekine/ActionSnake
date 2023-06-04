@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelCreater : MonoBehaviour
+public class LevelCreator : MonoBehaviour
 {
     [SerializeField] private int _cellsWidthCount;
     [SerializeField] private int _cellsHeightCount;
@@ -13,6 +13,7 @@ public class LevelCreater : MonoBehaviour
     [SerializeField] private SnakeHead _snake;
     [SerializeField] private TeleportTrigger _teleportTriggerPrefab;
     [SerializeField] private Camera _camera;
+    [SerializeField] private SnakeGrower _snakeGrower;
     [SerializeField] private List<FieldSpawnerBase> _fieldSpawners = new List<FieldSpawnerBase>();
 
     private Field _field;
@@ -53,6 +54,7 @@ public class LevelCreater : MonoBehaviour
         var cameraPositioner = new FieldCameraPositioner(_camera, _cameraUIOffset);
         cameraPositioner.PositionCamera(_field);
         var snakeTime = new SnakeStepTime(_snake);
+        _snakeGrower.Init(_snake);
 
         foreach (var fieldSpawner in _fieldSpawners)
         {

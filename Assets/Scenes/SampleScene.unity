@@ -1166,6 +1166,18 @@ MonoBehaviour:
     - _multiplier: 1
       _pointsToNextLevel: 300
       _pointsDecreasingRatePerStep: 10
+    - _multiplier: 2
+      _pointsToNextLevel: 1000
+      _pointsDecreasingRatePerStep: 10
+    - _multiplier: 4
+      _pointsToNextLevel: 1000
+      _pointsDecreasingRatePerStep: 10
+    - _multiplier: 8
+      _pointsToNextLevel: 2000
+      _pointsDecreasingRatePerStep: 20
+    - _multiplier: 12
+      _pointsToNextLevel: 3000
+      _pointsDecreasingRatePerStep: 30
 --- !u!1 &1560976244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1191,7 @@ GameObject:
   - component: {fileID: 1560976247}
   - component: {fileID: 1560976248}
   - component: {fileID: 1560976249}
+  - component: {fileID: 1560976250}
   m_Layer: 0
   m_Name: Field
   m_TagString: Untagged
@@ -1221,6 +1234,7 @@ MonoBehaviour:
   _snake: {fileID: 1180199310}
   _teleportTriggerPrefab: {fileID: 5254847615004439196, guid: c558c3f029f964548a502f289574777b, type: 3}
   _camera: {fileID: 963194227}
+  _snakeGrower: {fileID: 1560976250}
   _fieldSpawners:
   - {fileID: 1560976248}
   - {fileID: 1560976249}
@@ -1279,6 +1293,19 @@ MonoBehaviour:
   _maxSpawnTime: 20
   _maxSpawnedObject: 10
   _freeAreaSize: 1
+--- !u!114 &1560976250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560976244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f132b738d3a24e4e8c011701601c4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _snakeGrowRate: 10
 --- !u!1 &2136386912
 GameObject:
   m_ObjectHideFlags: 0
